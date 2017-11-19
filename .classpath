@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Elio/Google Drive/UTFPR-DV/Integração de Software/EclipseLink/eclipselink.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Elio/Google Drive/UTFPR-DV/Integração de Software/EclipseLink/javax.mail_1.4.0.v201005080615.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Elio/Google Drive/UTFPR-DV/Integração de Software/EclipseLink/javax.validation_1.1.0.v201304101302.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Elio/Google Drive/UTFPR-DV/Integração de Software/EclipseLink/javax.xml.bind_2.2.12.v201410011542.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Elio/Google Drive/UTFPR-DV/Integração de Software/EclipseLink/jaxb-core_2.2.11.v201407311112.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Elio/Google Drive/UTFPR-DV/Integração de Software/EclipseLink/jaxb-xjc_2.2.11.v201407311112.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Elio/Google Drive/UTFPR-DV/Integração de Software/EclipseLink/org.glassfish.javax.json_1.0.4.v201311181159.jar"/>
+	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
