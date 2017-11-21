@@ -174,7 +174,7 @@ public class FipeAps extends JFrame {
 					
 					List<Ano> anos = new DaoFipe().getAnos(veiculo.getCodigo());
 					
-					comboBox_ano.removeAllItems();
+//					comboBox_ano.removeAllItems();
 					
 					Ano a = new Ano();
 					a.setCodigo("0");
@@ -184,7 +184,7 @@ public class FipeAps extends JFrame {
 					for(Ano ano : anos) {
 						comboBox_ano.addItem(ano);
 					}
-//					comboBox_ano.setSelectedIndex(0);
+					comboBox_ano.setSelectedIndex(0);
 				}
 			}
 		});
