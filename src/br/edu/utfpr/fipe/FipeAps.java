@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusListener;
 import java.awt.event.ActionEvent;
 
 public class FipeAps extends JFrame {
@@ -174,7 +175,7 @@ public class FipeAps extends JFrame {
 					
 					List<Ano> anos = new DaoFipe().getAnos(veiculo.getCodigo());
 					
-//					comboBox_ano.removeAllItems();
+					comboBox_ano.removeAllItems();
 					
 					Ano a = new Ano();
 					a.setCodigo("0");
@@ -184,7 +185,7 @@ public class FipeAps extends JFrame {
 					for(Ano ano : anos) {
 						comboBox_ano.addItem(ano);
 					}
-					comboBox_ano.setSelectedIndex(0);
+//					comboBox_ano.setSelectedIndex(0);
 				}
 			}
 		});
@@ -197,20 +198,20 @@ public class FipeAps extends JFrame {
 				
 				Veiculo veiculoModelo = (Veiculo)comboBox_modelo.getSelectedItem();
 				Ano 	anoModelo  	  = (Ano)comboBox_ano.getSelectedItem();
-				
-				veiculoModelo.getCodigo();
-				anoModelo.getCodigo();
-				
-				if(veiculoModelo.getCodigo() != 0 && anoModelo.getCodigo() != "0") {
+
+				if(veiculoModelo != null && anoModelo != null) {
 					
-					VeiculoDetalhe veiculoDetalhe = new DaoFipe().getVeiculoDetalhe(veiculoModelo.getCodigo(), anoModelo.getCodigo());
-					
-					resultVeiculo.setText(veiculoDetalhe.getName());
-					resultModelo.setText(veiculoDetalhe.getAno_modelo());
-					resultCombustivel.setText(veiculoDetalhe.getCombustivel());
-					resultValor.setText("R$ "+ veiculoDetalhe.getPreco());
-					resultMes.setText(veiculoDetalhe.getReferencia());
-					resultCodigo.setText(veiculoDetalhe.getFipe_codigo());
+					if(veiculoModelo.getCodigo() != 0 && anoModelo.getCodigo() != "0") {
+						
+						VeiculoDetalhe veiculoDetalhe = new DaoFipe().getVeiculoDetalhe(veiculoModelo.getCodigo(), anoModelo.getCodigo());
+						
+						resultVeiculo.setText(veiculoDetalhe.getName());
+						resultModelo.setText(veiculoDetalhe.getAno_modelo());
+						resultCombustivel.setText(veiculoDetalhe.getCombustivel());
+						resultValor.setText("R$ "+ veiculoDetalhe.getPreco());
+						resultMes.setText(veiculoDetalhe.getReferencia());
+						resultCodigo.setText(veiculoDetalhe.getFipe_codigo());
+					}
 				}
 			}
 		});
