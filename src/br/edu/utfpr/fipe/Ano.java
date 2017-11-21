@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Ano {
 	
 	@XmlAttribute(name="id")
-	private int codigo;
+	private String codigo;
 	
 	@XmlAttribute(name="name")
 	private String nome;
 	
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 	public String getNome() {

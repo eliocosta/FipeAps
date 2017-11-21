@@ -128,4 +128,41 @@ public class DaoFipe {
 		}
 		return null;
 	}
+	
+	public VeiculoDetalhe getVeiculoDetalhe(int idVeiculo, String idAno){
+		
+		try {
+			URL url = new URL("http://www.fipe.tk/api/veiculoano.php?cod=" + idVeiculo + "&ano=" + idAno);
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			
+			if(con.getResponseCode() != 200) {
+				System.out.println("http error " + con.getResponseCode());
+			}
+			
+			BufferedReader reader = new BufferedReader(
+					new InputStreamReader(con.getInputStream()));
+			
+			Map<String, Object> prop = new HashMap<String, Object>(2);
+			prop.put(JAXBContextProperties.MEDIA_TYPE, "application/json");
+			
+			// caso tenha objeto raiz no json
+			prop.put(JAXBContextProperties.JSON_INCLUDE_ROOT, false);
+			
+			JAXBContext context = JAXBContext.newInstance(
+					new Class[] {VeiculoDetalhe.class}, prop);
+			
+			Unmarshaller deserialize = context.createUnmarshaller();
+						
+			VeiculoDetalhe veiculoDetalhe = (VeiculoDetalhe)deserialize.unmarshal(
+												new StreamSource(reader), VeiculoDetalhe.class
+											).getValue();
+			
+			return veiculoDetalhe;
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
